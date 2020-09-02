@@ -42,4 +42,4 @@ jobs:
         run: |
           mkdir ~/.git
           git config --global user.email "dev@hellomy.house" & git config --global user.name "hellomy-house"
-          npx gh-pages -d public -b gh-pages -r https://github.com/hellomy-house/intelior.git
+          gh-pages -d public -b gh-pages
