@@ -22,10 +22,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        with:
-          repository: 'hellomy-house/intelior'
-          ref: ${{ github.head_ref }}
-          persist-credentials: false
 
       # Runs a single command using the runners shell
       - name: npm install
