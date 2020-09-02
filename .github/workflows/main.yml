@@ -30,8 +30,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: config
         run: |
-          git config user.email "dev@hellomy.house"
-          git config user.name "hellomy-house"
+          git config user.email "dev@hellomy.house" & git config user.name "hellomy-house"
 
       # Runs a single command using the runners shell
       - name: npm install
