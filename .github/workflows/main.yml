@@ -39,6 +39,11 @@ jobs:
           npm install
 
       # Runs a single command using the runners shell
-      - name: run deploy
+      - name: build
         run: |
-          npm run deploy
+          npx gatsby build --prefix-paths
+
+      # Runs a single command using the runners shell
+      - name: deploy 
+        run: |
+          gh-pages -d public -b gh-pages
