@@ -26,10 +26,17 @@ jobs:
           repository: 'hellomy-house/intelior'
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: config
         run: |
           git config --global user.email "dev@hellomy.house"
           git config --global user.name "hellomy-house"
-          npm install
-          npm run deploy
 
+      # Runs a single command using the runners shell
+      - name: npm install
+        run: |
+          npm install
+
+      # Runs a single command using the runners shell
+      - name: run deploy
+        run: |
+          npm run deploy
