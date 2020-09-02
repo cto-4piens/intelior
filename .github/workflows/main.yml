@@ -45,4 +45,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: deploy 
         run: |
-          npx gh-pages -d public -b gh-pages
+          git config user.email "dev@hellomy.house" & git config user.name "hellomy-house"
+          npx gh-pages -d public -b gh-pages -r https://github.com/hellomy-house/intelior.git
