@@ -28,11 +28,6 @@ jobs:
           persist-credentials: false
 
       # Runs a single command using the runners shell
-      - name: config
-        run: |
-          git config user.email "dev@hellomy.house" & git config user.name "hellomy-house"
-
-      # Runs a single command using the runners shell
       - name: npm install
         run: |
           npm install
@@ -45,5 +40,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: deploy 
         run: |
+          mkdir ~/.git
           git config user.email "dev@hellomy.house" & git config user.name "hellomy-house"
           npx gh-pages -d public -b gh-pages -r https://github.com/hellomy-house/intelior.git
