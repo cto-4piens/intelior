@@ -1,42 +1,32 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-
+import styles from './layout.module.css'
+import { DefaultMaxWidthContainer } from './layout'
+import BlueLogo from './blueLogo'
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+    <header
+        className={styles.header}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+        <div className={styles.inner_container}>
+            <div className={styles.image_wrapper}>
+                <BlueLogo />
+            </div>
+            <div className={styles.link_container}>
+                <div className={styles.link}>
+                    <Link to="/recruit" style={{ color: "black", marginBottom: 0 }}>채용</Link>
+                </div>
+            </div>
+        </div>
+    </header>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+    siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+    siteTitle: ``,
 }
 
 export default Header

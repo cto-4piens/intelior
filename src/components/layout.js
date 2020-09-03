@@ -6,6 +6,7 @@
  */
 
 import React from "react"
+import styles from './layout.module.css'
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -13,7 +14,7 @@ import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -23,29 +24,37 @@ const Layout = ({ children }) => {
     }
   `)
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
+    return (
+        <>
+            <Header siteTitle={data.site.siteMetadata.title} />
+            <main>{children}</main>
+            <footer>
+                <DefaultMaxWidthContainer>
+                    © {new Date().getFullYear()}, Built with
+                    {` `}
+                    <a href="https://www.gatsbyjs.org">Gatsby</a>
+                </DefaultMaxWidthContainer>
+            </footer>
+        </>
+    )
+}
+
+export const DefaultMaxWidthContainer = ({ children }) => {
+    return (
+        <div
+            style={{
+                margin: `0 auto`,
+                maxWidth: 960,
+                padding: `0 1.45rem`,
+            }}
+        >
+            {children}
+        </div>
+    )
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 }
 
 export default Layout

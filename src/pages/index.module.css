@@ -1,0 +1,162 @@
+.main_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #ffd836;
+}
+
+.image_wrapper {
+    position: absolute;
+    margin-top: 48px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50%);
+    max-width: 827px;
+    width: 50vw;
+    z-index: 0;
+}
+
+.text_container {
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+
+.section_text_container {
+    text-align: center;
+}
+
+@media(max-width: 767px) {
+    .section_text_container {
+        text-align: left!important;
+    }
+}
+
+.logo_wrapper {
+    width: 60px;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.section {
+    position: relative;
+    padding: 8em 24px 8em 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.platform_container {
+    width: 50vw;
+    min-width: 327px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.platform_row {
+    margin-bottom: 12px;
+}
+
+.platform {
+    border: solid 1px black;
+    background-color: #fee44e;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 12px; */
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.platform_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.platform_consumer {
+    /* background-color: #1064db; */
+    border: solid 1px black;
+    color: black;
+    width: calc(50vw / 2 - 6px);
+    min-width: 157.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    border-radius: 12px;
+}
+
+.platform_supplier {
+    min-width: 157.5px;
+    border: solid 1px black;
+    border-radius: 12px;
+    height: 80px;
+    /* background-color: #1064db; */
+    color: black;
+    width: calc(50vw / 2 - 6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chevron_next {
+    width: 12px;
+    margin-left: 4px;
+}
+
+.chevron_next>path {
+    fill: blue;
+}
+
+.link_to_recruit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.with_background {
+    background-color: #ffd836;
+}
+
+.with_background::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.1;
+    background: url('/images/recruit_background.png');
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: auto 100%;
+    /*adjust s value for speed*/
+    animation: animatedBackground 400s linear infinite;
+}
+
+.with_background>div {
+    z-index: 10;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    /*use negative width if you want it to flow right to left else and positive for left to right*/
+    to {
+        background-position: -10000px 0;
+    }
+}
