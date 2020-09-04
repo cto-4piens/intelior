@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `안녕내집 기업소개`,
+    description: `모두의 일상이 빈 틈 없이 아름답도록 안녕내집이 인테리어 문화를 선도합니다.`,
+    author: `@hellomy-house`,
   },
-  pathPrefix: '/',
+  pathPrefix: `/`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -23,9 +23,9 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
-        theme_color: `#663399`,
+        theme_color: `#ffd836`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

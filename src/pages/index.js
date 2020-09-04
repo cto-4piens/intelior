@@ -11,6 +11,7 @@ const IndexPage = () => (
         <SEO title="About" />
         <div className={styles.main_container}>
             <div className={styles.image_wrapper}>
+                {/* <img src={`/images/`} */}
                 <Image />
             </div>
             <div className={styles.text_container}>
@@ -55,6 +56,26 @@ const IndexPage = () => (
                 투명하게 내역이 공개된 견적서, A/S 가 명시된 안심 계약서까지 제공하여<br />
 소비자가 알맞은 가격과 안심할 수 있는 정보로 인테리어 거래를 진행할 수 있도록 돕습니다.</p>
             </div>
+            <div className={styles.magazine_container}>
+                <MagazineCard
+                    title="자재 금액, 업체 이윤을 공개한 '솔직패키지'"
+                    subtitle="합리적인 인테리어를 위한 솔직패키지를 알아보세요"
+                    thumbnail={withPrefix('/consumer_1.png')} 
+                    link={'https://hellomy.house/magazine/eae9c9e6-c722-44a8-a67b-899103732780'}
+                />
+                <MagazineCard
+                    title="상세 가격을 공개한 견적서, AS가 명시된 계약서"
+                    subtitle="투명한 인테리어의 필수요소입니다."
+                    thumbnail={withPrefix('/consumer_2.png')}
+                    link={'https://hellomy.house/magazine/eae9c9e6-c722-44a8-a67b-899103732780'}
+                />
+                <MagazineCard
+                    title="하자이행 보험, 계약이행 보험으로 더욱 더 안전하게"
+                    subtitle="보험을 통해 더욱 더 안전한 인테리어 공사를 진행하세요"
+                    thumbnail={withPrefix('/consumer_3.png')}
+                    link={'https://hellomy.house/magazine/eae9c9e6-c722-44a8-a67b-899103732780'}
+                />
+            </div>
         </section>
         <section className={styles.section}>
             <div className={styles.caption_wrapper}>
@@ -67,14 +88,34 @@ const IndexPage = () => (
                 공사 현장을 전문적인 사진 촬영과 시공 보고서로 기록해 드리는 서비스까지.<br />
 안녕내집의 협력업체가 되시고 안정적이고 지속적인 사업 성장을 경험해 보세요.</p>
             </div>
+            <div className={styles.magazine_container}>
+                <MagazineCard
+                    title="3D 시뮬레이션으로 탄생한 예상도로 고객과 소통하세요"
+                    subtitle="고객만족도는 더욱 더 상승합니다"
+                    thumbnail={withPrefix('/supplier_1.png')}
+                    link={'https://hellomy.house/magazine/0ec9dba7-b9ea-4314-ac2e-7dbb2010984a'}
+                />
+                <MagazineCard
+                    title="전문 사진가의 포트폴리오 촬영으로 현장을 생생하게"
+                    subtitle="전문 공사 현장의 느낌을 그대로 고객에게 전달해보세요"
+                    thumbnail={withPrefix('/supplier_2.png')}
+                    link={'https://hellomy.house/magazine/0ec9dba7-b9ea-4314-ac2e-7dbb2010984a'}
+                />
+                <MagazineCard
+                    title="시공관리 프로그램으로 고객관리를 더욱 편하게"
+                    subtitle="시공에 더 집중하세요. 고객관리 수고를 덜어보세요"
+                    thumbnail={withPrefix('/supplier_3.png')}
+                    link={'https://hellomy.house/magazine/0ec9dba7-b9ea-4314-ac2e-7dbb2010984a'}
+                />
+            </div>
         </section>
         <section className={`${styles.section} ${styles.with_background}`} style={{
             backgroundColor: "#fee638",
-            // backgroundImage: `url(${withPrefix('/images/recruit_background.png')})`,
+            backgroundImage: `url(${withPrefix('/recruit_background.png')})`,
         }}>
             <div className={styles.section_text_container}>
                 <h2 style={{ color: "#1064db" }}>안녕내집에서는 솔직한 인재들이<br />똑똑한 방식으로 함께합니다</h2>
-                <Link className={styles.link_to_recruit} to="/recruit">
+                <Link className={styles.link_to_recruit} to="https://hellomy.house/magazine/096a9b5e-02f4-4868-b611-1a9db8761f05" style={{color: "#333"}}>
                     채용 바로가기
                     <svg className={styles.chevron_next} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                         viewBox="0 0 185.343 185.343" space="preserve">
@@ -88,6 +129,16 @@ const IndexPage = () => (
     </Layout>
 )
 
-
+const MagazineCard = ({thumbnail, title, subtitle, link}) => {
+    return (
+        <a href={link} className={styles.magazine_card}>
+            <img src={thumbnail}/>
+            <div className={styles.magazine_desc}>
+                <h3>{title}</h3>
+                <h5>{subtitle}</h5>
+            </div>
+        </a>
+    )
+}
 
 export default IndexPage
