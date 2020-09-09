@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{ee8K:function(n,e,t){"use strict";t.r(e);var u=t("q1tI"),a=t.n(u);e.default=function(){return a.a.createElement("div",null,"아쿠아맨")}}}]);
+//# sourceMappingURL=component---src-pages-aquaman-index-js-cea5b39462ec4518f0c9.js.map
