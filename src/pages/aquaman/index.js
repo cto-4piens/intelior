@@ -137,7 +137,7 @@ const ServiceCard = ({ service }) => {
 export const Layout = ({ children }) => {
     return (
         <div>
-            <Header />
+            <Header isButtonExist={true}/>
             <main>
                 {children}
             </main>
@@ -146,11 +146,27 @@ export const Layout = ({ children }) => {
     )
 }
 
-const Header = () => {
+export const Layout2 = ({ children }) => {
+    return (
+        <div>
+            <Header isButtonExist={false} />
+            <main>
+                {children}
+            </main>
+            <Footer />
+        </div>
+    )
+}
+
+const Header = ({ isButtonExist = false }) => {
     return (
         <header className={styles.aquaman_header}>
             <a href={"/aquaman"} className={styles.aquaman_logo}>AQUAMAN</a>
-            <a href={"/aquaman/request"} className={styles.aquaman_start_request}>상담신청</a>
+            {
+                isButtonExist ?
+                    <a href={"/aquaman/request"} className={styles.aquaman_start_request}>상담신청</a>
+                    : null
+            }
         </header>
     )
 }
@@ -220,19 +236,19 @@ const services = [
         link: "/aquaman/request?service=수전수리"
     },
     {
-        thumbnail: "/aquaman/service1.png",
+        thumbnail: "/aquaman/service4.png",
         name: "주방배관막힘 >",
         price: "25,000원",
         link: "/aquaman/request?service=주방배관막힘"
     },
     {
-        thumbnail: "/aquaman/service1.png",
+        thumbnail: "/aquaman/service5.png",
         name: "배수구수리 >",
         price: "60,000원",
         link: "/aquaman/request?service=배수구수리"
     },
     {
-        thumbnail: "/aquaman/service1.png",
+        thumbnail: "/aquaman/service6.png",
         name: "누수 >",
         price: "상담필요",
         link: "/aquaman/request?service=누수"

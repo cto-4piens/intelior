@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Layout, AvailableServices } from '../index'
+import { Layout2, AvailableServices } from '../index'
 import { withPrefix } from 'gatsby'
 import styles from './request.module.css'
 import { useForm } from 'react-hook-form'
@@ -32,7 +32,7 @@ export default () => {
     }
 
     return (
-        <Layout>
+        <Layout2>
             {
                 serviceName ?
                     <div className={styles.requested_service}>
@@ -64,7 +64,7 @@ export default () => {
                     :
                     <AvailableServices title={"서비스를 선택해주세요"} />
             }
-        </Layout>
+        </Layout2>
     )
 }
 
