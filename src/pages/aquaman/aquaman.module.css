@@ -1,0 +1,225 @@
+/* header */
+
+.aquaman_header {
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: -1px;
+
+    background-color: white;
+
+    z-index: 10;
+}
+
+.aquaman_logo {
+    color: #2988FF;
+    font-weight: 700;
+}
+
+.aquaman_start_request {
+    border: none;
+    padding: 4px 12px;
+    background-color: #333;
+    color: white;
+    border-radius: 20px;
+}
+
+/* Mainbanner */
+
+.main_banner {
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.main_title {
+    font-size: 32px!important;
+}
+
+.main_desc {
+    font-weight: 300!important;
+    line-height: 1.33;
+}
+
+.main_link {
+    color: #2988FF;
+}
+
+/* available_service */
+
+.available_services {
+    padding: 24px;
+    background-color: #F2F8FF;
+    display: flex;
+    flex-direction: column;
+}
+
+.available_services>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* service_card */
+
+.service_card {
+    width: 93px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.service_card>img {
+    width: 93px;
+    height: 93px;
+    border-radius: 100%;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+
+.service_name {
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 8px;
+    letter-spacing: -2px;
+}
+
+.service_price {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* about */
+
+.about {
+    padding: 48px 24px 48px 24px;
+    background-color: #006CFF;
+    color: white;
+}
+
+.about>p {
+    font-size: 16px;
+    line-height: 1.66666;
+}
+
+.about>.caption {
+    margin-top: 48px;
+    font-size: 12px;
+    width: 100%;
+    text-align: right;
+}
+
+/* why */
+
+.why {
+    padding: 48px 24px 48px 24px;
+}
+
+.factor>svg {
+    fill: #1064db;
+    margin-right: 8px;
+}
+
+.why>.factor {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.why>p {
+    margin-top: 4px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* review */
+
+.reviews_outer {
+    padding: 48px 0 48px 0;
+    background-color: #F2F8FF
+}
+
+.reviews_outer>h3 {
+    margin-left: 24px;
+}
+
+.reviews_inner {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.review_card {
+    width: 315px;
+    display: inline-block;
+}
+
+.review_card:nth-child(1) {
+    margin-left: 24px;
+}
+
+.review_card {
+    padding: 24px;
+    background-color: white;
+    margin-right: 12px;
+    border-radius: 5px;
+}
+
+.review_title {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.review_title::before {
+    content: '👍';
+    font-size: 32px;
+    margin-right: 8px;
+    width: 32px!important;
+    height: 32px!important;
+    border-radius: 100%;
+}
+
+.review_desc {
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 40px;
+    white-space: normal;
+    word-break: keep-all;
+}
+
+.review_date {
+    margin-left: 40px;
+
+    font-size: 14px;
+
+    color: rgba(0,0,0,0.5);
+
+    margin-bottom: 0!important;
+}
+
+
+/* footer */
+.footer {
+    padding: 48px 24px 48px 24px;
+}
+.footer > p {
+    font-size: 12px;
+
+    margin-bottom: 12px;
+}

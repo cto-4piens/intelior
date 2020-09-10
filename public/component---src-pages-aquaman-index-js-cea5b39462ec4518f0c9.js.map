@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/pages/aquaman/index.js"],"names":[],"mappings":"2FAAA,gCAEe,qBACX,OACI","file":"component---src-pages-aquaman-index-js-cea5b39462ec4518f0c9.js","sourcesContent":["import React from 'react'\n\nexport default () => {\n    return (\n        <div>\n            아쿠아맨\n        </div>\n    )\n}"],"sourceRoot":""}
