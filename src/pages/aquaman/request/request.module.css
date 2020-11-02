@@ -61,3 +61,11 @@
     color: white;
     
 }
+
+.form > p {
+    font-size: 12px;
+}
+
+.error {
+    color: red;
+}

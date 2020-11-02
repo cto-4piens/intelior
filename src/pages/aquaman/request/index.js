@@ -7,7 +7,7 @@ export default () => {
 
     const [serviceName, setServiceName] = useState()
 
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, errors } = useForm()
 
     useEffect(() => {
         const queryString = window.location.search
@@ -39,9 +39,9 @@ export default () => {
                         <img src={withPrefix(`/aquaman/${serviceName}.jpg`)} />
                         <h2 className={styles.service_name}>{serviceName}</h2>
                         <div className={styles.cost_container}>
-                            <p className={styles.cost}>설치비 <strong>{serviceInfo[serviceName].installCost}</strong></p>
-                            <p className={styles.cost}>출장/견적/현장점검비 <strong>{serviceInfo[serviceName].defaultCost}</strong></p>
-                            <p className={styles.cost_caption}>* 설치 작업 외, 추가시공 진행 시 추가비 발생</p>
+                            <p className={styles.cost}>비용 <strong>{serviceInfo[serviceName].installCost}</strong></p>
+                            <p className={styles.cost}>출장/견적/현장점검 <strong>{serviceInfo[serviceName].defaultCost}</strong></p>
+                            <p className={styles.cost_caption}>* 해당 작업 외, 추가시공 진행 시 추가비 발생</p>
                             <p className={styles.total_cost}>예상비용 <strong>{serviceInfo[serviceName].totalCost}</strong></p>
                         </div>
 
@@ -52,12 +52,17 @@ export default () => {
                             <label htmlFor={"address"}>나머지주소</label>
                             <input placeholder={""} type="text" name={"extraAddress"} ref={register} />
 
-                            <label htmlFor={"address"}>휴대전화</label>
-                            <input placeholder={"- 없이 숫자만 입력해주세요"} type="text" name={"phoneNum"} ref={register} />
+                            <label htmlFor={"phoneNum"}>휴대전화</label>
+                            <input placeholder={"- 없이 숫자만 입력해주세요"} type="text" name={"phoneNum"} ref={register({required: true})} />
 
                             <label htmlFor={"memo"}>남기실 말씀</label>
                             <input type="text" name={"memo"} ref={register} />
 
+                            <p>
+                                아래 버튼을 클릭하시면 서비스 신청이 완료되며 <a href={"https://api1.hellomy.house/privacy.html"}>개인정보처리방침</a>과 <a href={"https://api1.hellomy.house/usage.html"}>이용약관</a>에 동의하는 것입니다
+                            </p>
+
+                            {errors.phoneNum ? <p className={styles.error}>휴대전화 번호를 입력해주세요</p> : null}
                             <button type="submit">전문가 매칭 시작</button>
                         </form>
                     </div>
@@ -123,7 +128,7 @@ const serviceInfo = {
     },
     "누수": {
         installCost: "방문후 책정",
-        defaultCost: "무료",
+        defaultCost: "사전 상담 후 무료여부 결정",
         totalCost: "방문후 책정"
     },
 }

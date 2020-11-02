@@ -1,16 +1,91 @@
 import React from 'react'
 import styles from './aquaman.module.css'
 import { Link } from 'gatsby'
-
+import { Helmet } from 'react-helmet'
 export default () => {
     return (
         <Layout>
+            <Helmet
+                link={[
+                    {
+                        rel: `stylesheet`,
+                        href: "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+                    }
+                ]}
+                title={"아쿠아맨"}
+                titleTemplate={`아쿠아맨`}
+                meta={[
+                    {
+                        name: `og:image`,
+                        content: `/aquaman/aquaman_og.png`
+                    },
+                    {
+                        name: `description`,
+                        content: "매칭 후 30분안에 찾아가는 당신만의 맥가이버, 아쿠아맨",
+                    },
+                    {
+                        property: `og:title`,
+                        content: '아쿠아맨',
+                    },
+                    {
+                        property: `og:description`,
+                        content: '매칭 후 30분안에 찾아가는 당신만의 맥가이버, 아쿠아맨',
+                    },
+                    {
+                        property: `og:type`,
+                        content: `website`,
+                    },
+                    {
+                        name: `twitter:card`,
+                        content: `summary`,
+                    },
+                    {
+                        name: `twitter:title`,
+                        content: '아쿠아맨',
+                    },
+                    {
+                        name: `twitter:description`,
+                        content: '매칭 후 30분안에 찾아가는 당신만의 맥가이버, 아쿠아맨',
+                    },
+                ]}
+            >
+                <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+                <link rel="shortcut icon" href="/aquaman/aquaman_og.png" />
+                <link rel="apple-touch-icon" href="/aquaman/aquaman_og.png" />
+                <link rel="apple-touch-icon" href="/aquaman/aquaman_og.png" />
+                <link rel="apple-touch-icon" href="/aquaman/aquaman_og.png" />
+                <link rel="apple-touch-icon" href="/aquaman/aquaman_og.png" />
+                <link rel="canonical" href="https://corp.hellomy.house/aquaman" />
+                <meta property="og:title" content="30분안에 찾아가는 당신만의 맥가이버, 아쿠아맨" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://corp.hellomy.house/aquaman" />
+                <meta property="og:image" content="/aquaman/aquaman_og.png" />
+                <meta property="og:description" content="30분안에 찾아가는 당신만의 맥가이버, 아쿠아맨을 만나보세요." />
+                <meta name="description" content="30분안에 찾아가는 당신만의 맥가이버, 아쿠아맨을 만나보세요." />
+                <meta name="NaverBot" content="All" />
+                <meta name="NaverBot" content="index,follow" />
+                <meta name="Yeti" content="All" />
+                <meta name="Yeti" content="index,follow" />
+                <meta name="googlebot" content="All" />
+                <meta name="googlebot" content="index,follow" />
+            </Helmet>
             <MainBanner />
             <AvailableServices />
             <About />
             <Why />
             <Reviews />
+            <CompanyRegistration />
         </Layout>
+    )
+}
+
+const CompanyRegistration = () => {
+    return (
+        <div className={styles.registration}>
+            <h4>협력업체 지원하기</h4>
+            <p>아쿠아맨의 헙력업체가 되어서<br />고객님들의 불편을 같이 해결해보아요</p>
+            <a href={"https://docs.google.com/forms/d/e/1FAIpQLSeAcEUyrdmBrMiCMoOVbG0sIyUNqcdLMTX_ZTKvWQ8Ip9KPag/viewform"}>{"지원하기 \>"}</a>
+        </div>
     )
 }
 
@@ -20,7 +95,7 @@ const MainBanner = () => {
             <h1 className={styles.main_title}>아쿠아맨</h1>
             <p className={styles.main_desc}>
                 집에 문제가 발생했나요?<br />
-                30분 내로 찾아가는<br />
+                매칭 후 30분 내로 찾아가는<br />
                 당신만의 맥가이버<br />
             </p>
             <a className={styles.main_link} href={"#about"}>
@@ -64,7 +139,7 @@ const About = () => {
             <p>
                 누수, 배관, 수전 문제가 발생했을때
                 기사님 출장시 지불하는 비용이 부담스러우셨죠?
-                이제  부담없이  전문가의 무료 실측을 받아세요.
+                이제  부담없이  전문가의 무료 실측을 받으세요.
                 시공후엔 온라인으로 편리한 결제가 가능합니다.
             </p>
             <div className={styles.caption}>
@@ -137,7 +212,7 @@ const ServiceCard = ({ service }) => {
 export const Layout = ({ children }) => {
     return (
         <div>
-            <Header isButtonExist={true}/>
+            <Header isButtonExist={true} />
             <main>
                 {children}
             </main>
@@ -183,6 +258,12 @@ const Footer = () => {
             <p>통신판매번호: 2020-서울강서-2720</p>
             <p>주소: 서울특별시 강서구 마곡서로 133, 713동 7층 705호</p>
             <p>Copyright(C) 인텔리어(hellomy.house) All Rights Reserved</p>
+            <p>
+                <a href="https://hellomy-house-s3.s3.ap-northeast-2.amazonaws.com/prod/zsr/usage.html">이용약관</a>
+            </p>
+            <p>
+                <a href="https://hellomy-house-s3.s3.ap-northeast-2.amazonaws.com/prod/zsr/privacy.html">개인정보 처리방침</a>
+            </p>
         </footer>
     )
 }
